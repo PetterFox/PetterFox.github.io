@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    
+
+    <title>Tax App</title>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="box" id="box">
+        <h2 align="center" class="h2letter">Tax Calculation</h2>
+        <div class="nav">
+          <button type="button" id="darkbtn" class="darkbtn">Dark Mode</button>
+          <button type="button">Unknown</button>
+          <button type="button">Unknown</button>
+        </div>
+        <div class="selecttype">
+          <select name="type" id="type">
+            <option value="Resident">Resident</option>
+            <option value="Non-Resident">Non-Resident</option>
+          </select>
+        </div>
+        <div class="inputvalue">
+          <div class="upper-part">
+            <div class="input-salary">
+              <h2 class="h2letter">Salary</h2>
+              <input
+                type="text"
+                name="Salary"
+                id="Salary"
+                placeholder="Enter Salary"
+              />
+            </div>
+            <div class="input-fringe_benefit">
+              <h2 align="left" class="h2letter">Fringe Benefit</h2>
+              <input
+                type="text"
+                name="fringe_benefit"
+                id="fringe_benefit"
+                placeholder="Enter fringe benefit"
+              />
+            </div>
+          </div>
+          <div class="bottom-part">
+            <div class="input-children">
+              <h2 class="h2letter">Children</h2>
+              <input
+                type="text"
+                name="Children"
+                id="Children"
+                placeholder="Children(Must not greater than 9)"
+                style="font-size: 11px"
+              />
+            </div>
+            <div class="input-spouse">
+              <h2 class="h2letter">Spouse</h2>
+              <input
+                type="text"
+                name="Spouse"
+                id="Spouse"
+                placeholder="Enter Spouse"
+              />
+            </div>
+          </div>
+          <div class="choose-method">
+            <h2 align="center" id="currency" class="h2letter">Currency</h2>
+            <div class="payment">
+              <div class="riel" id="riel">Riel</div>
+              <div class="usd" id="usd">USD</div>
+              <input
+                type="text"
+                name="ex-rate"
+                id="ex-rate"
+                placeholder="Enter Exchange rate"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="button-section">
+          <button type="reset">Reset</button>
+          <button type="button" id="calculatebtn">Calculate</button>
+        </div>
+        <div class="result-section">
+          <div class="tax-section">
+            <h2 id="tax"></h2>
+          </div>
+          <div class="tax-rate-section">
+            <h2 id="tax-rate"></h2>
+          </div>
+          <div class="tax-on-salary-section">
+            <h2 id="tax-on-salary"></h2>
+          </div>
+          <div class="tax-on-fringe-benefit-section">
+            <h2 id="tax-on-fringe_benefit"></h2>
+          </div>
+          <div class="net-salary-section">
+            <h2 id="net-salary"></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
