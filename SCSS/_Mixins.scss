@@ -1,0 +1,33 @@
+
+@mixin align_item ($spacing){
+    display: flex;
+    align-items: center;
+    justify-content: $spacing;
+
+}
+
+@mixin button($background-color, $text-color, $border-size, $border){
+    width: 90px;
+    height: 35px;
+    background-color: $background-color;
+    border: $border;
+    font-size: 15px;
+    border-radius: 90px;
+    color: $text-color;
+    border-width:$border-size;
+}
+
+@mixin position_image(){
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin set_size($width, $height){
+    width: $width;
+    height: $height;
+
+
+
+}
+

@@ -1,0 +1,217 @@
+@import "variables";
+@import "Mixins";
+
+@property --progress-value {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+
+.progress-bar-wrapper {
+  margin: auto;
+  @include set_size(80%, auto);
+  // display: grid;
+  // grid-template-columns: auto auto auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-gap: 5px;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    p {
+      text-align: center;
+      padding-top: 10px;
+    }
+  }
+}
+
+.progress-bar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+
+  /* to center the percentage value */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes ps-progress {
+  to {
+    --progress-value: 70;
+  }
+}
+
+@keyframes ai-progress {
+  to {
+    --progress-value: 80;
+  }
+}
+@keyframes pr-progress {
+  to {
+    --progress-value: 50;
+  }
+}
+@keyframes id-progress {
+  to {
+    --progress-value: 80;
+  }
+}
+
+@keyframes pg-progress {
+  to {
+    --progress-value: 50;
+  }
+}
+@keyframes mo-progress {
+  to {
+    --progress-value: 80;
+  }
+}
+
+@keyframes wd-progress {
+  to {
+    --progress-value: 60;
+  }
+}
+
+@keyframes wp-progress {
+  to {
+    --progress-value: 80;
+  }
+}
+
+@keyframes ft-progress {
+  to {
+    --progress-value: 50;
+  }
+}
+
+.progress-bar-ps::before {
+  content: counter(percentage) "%";
+}
+
+.progress-bar-ps.active {
+  background: radial-gradient(closest-side, white 74%, transparent 75% 100%),
+    conic-gradient(
+      rgb(51, 103, 177) calc(var(--progress-value) * 1%),
+      rgb(218, 218, 218) 0
+    );
+  animation: ps-progress 3s 1 forwards;
+  counter-reset: percentage var(--progress-value);
+}
+
+.progress-bar-ai::before {
+  content: counter(percentage) "%";
+}
+
+.progress-bar-ai.active {
+  background: radial-gradient(closest-side, white 74%, transparent 75% 100%),
+    conic-gradient(
+      rgb(210, 117, 40) calc(var(--progress-value) * 1%),
+      rgb(218, 218, 218) 0
+    );
+  animation: ai-progress 3s 1 forwards;
+  counter-reset: percentage var(--progress-value);
+}
+
+.progress-bar-pr::before {
+  content: counter(percentage) "%";
+}
+
+.progress-bar-pr.active {
+  background: radial-gradient(closest-side, white 74%, transparent 75% 100%),
+    conic-gradient(
+      rgb(146, 71, 155) calc(var(--progress-value) * 1%),
+      rgb(218, 218, 218) 0
+    );
+  animation: pr-progress 3s 1 forwards;
+  counter-reset: percentage var(--progress-value);
+}
+
+.progress-bar-id::before {
+  content: counter(percentage) "%";
+}
+
+.progress-bar-id.active {
+  background: radial-gradient(closest-side, white 74%, transparent 75% 100%),
+    conic-gradient(
+      rgb(217, 26, 93) calc(var(--progress-value) * 1%),
+      rgb(218, 218, 218) 0
+    );
+  animation: id-progress 3s 1 forwards;
+  counter-reset: percentage var(--progress-value);
+}
+
+.progress-bar-pg::before {
+  content: counter(percentage) "%";
+}
+
+.progress-bar-pg.active {
+  background: radial-gradient(closest-side, white 74%, transparent 75% 100%),
+    conic-gradient(
+      rgb(16, 141, 33) calc(var(--progress-value) * 1%),
+      rgb(218, 218, 218) 0
+    );
+  animation: pg-progress 3s 1 forwards;
+  counter-reset: percentage var(--progress-value);
+}
+
+.progress-bar-mo::before {
+  content: counter(percentage) "%";
+}
+
+.progress-bar-mo.active {
+  background: radial-gradient(closest-side, white 74%, transparent 75% 100%),
+    conic-gradient(
+      rgb(28, 28, 28) calc(var(--progress-value) * 1%),
+      rgb(218, 218, 218) 0
+    );
+  animation: mo-progress 3s 1 forwards;
+  counter-reset: percentage var(--progress-value);
+}
+
+.progress-bar-wd::before {
+  content: counter(percentage) "%";
+}
+
+.progress-bar-wd.active {
+  background: radial-gradient(closest-side, white 74%, transparent 75% 100%),
+    conic-gradient(
+      rgb(247, 255, 6) calc(var(--progress-value) * 1%),
+      rgb(218, 218, 218) 0
+    );
+  animation: wd-progress 3s 1 forwards;
+  counter-reset: percentage var(--progress-value);
+}
+
+.progress-bar-wp::before {
+  content: counter(percentage) "%";
+}
+
+.progress-bar-wp.active {
+  background: radial-gradient(closest-side, white 74%, transparent 75% 100%),
+    conic-gradient(
+      rgb(13, 106, 194) calc(var(--progress-value) * 1%),
+      rgb(218, 218, 218) 0
+    );
+  animation: wp-progress 3s 1 forwards;
+  counter-reset: percentage var(--progress-value);
+}
+
+.progress-bar-ft::before {
+  content: counter(percentage) "%";
+}
+
+.progress-bar-ft.active {
+  background: radial-gradient(closest-side, white 74%, transparent 75% 100%),
+    conic-gradient(
+      rgb(8, 158, 166) calc(var(--progress-value) * 1%),
+      rgb(218, 218, 218) 0
+    );
+  animation: ft-progress 3s 1 forwards;
+  counter-reset: percentage var(--progress-value);
+}

@@ -1,0 +1,154 @@
+@import "variables";
+@import "Mixins";
+
+nav {
+  @include set_size(100%, 10vh);
+  display: flex;
+  align-items: center;
+  z-index: 20;
+  position: fixed;
+  .logo {
+    cursor: pointer;
+    img {
+      @include set_size(50px, 50px);
+      border-radius: 50px;
+      margin-left: 90px;
+      
+    }
+  }
+
+  ul {
+    margin-left: 20px;
+    width: 600px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    padding: 10px 0px 10px 0px;
+    border-radius: 60px;
+    li {
+      
+      @include align-item(center);
+      cursor: pointer;
+      a {
+        position: relative;
+        color: #333;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 6px 0;
+        text-decoration: none;
+      }
+     
+      a:before{
+        
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 0%;
+        background: rgb(56, 213, 98);
+        border-radius: 12px;
+        transition: all 0.2s ease;
+      }
+      a:hover:before{
+        width: 100%;
+       
+      }
+      a:before{
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+ 
+  
+
+
+
+
+
+  .settingbtn {
+    display: none;
+    cursor: pointer;
+    div {
+      width: 25px;
+      height: 3px;
+      background-color: black;
+      margin: 5px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 845px) {
+  nav {
+    ul {
+      display: none;
+    }
+  }
+  .showcase{
+    .background{
+      margin-top: 50px;
+      .left-section{
+        .header{
+          font-size: 55px;
+          line-height: 65px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  body {
+    overflow-x: hidden;
+   
+    nav {
+      display: flex;
+      justify-content: space-between;
+      .settingbtn {
+        display: block;
+        margin-right: 20px;
+      }
+      .logo {
+        img {
+          margin: 10px 0px 20px 30px;
+        }
+      }
+
+      ul {
+        transform: translateY(-150%);
+        z-index: 5;
+        position: absolute;
+        right: 0px;
+        top: 10vh;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 40vh;
+        flex-direction: column;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 0;
+        
+        li {
+          
+          display: flex;
+          justify-content: space-between;
+    
+          a{
+            color: black;
+            font-size: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.settingbtnclicked {
+  transform: translateX(0%);
+}

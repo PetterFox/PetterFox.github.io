@@ -1,0 +1,195 @@
+@import "variables";
+@import "Mixins";
+
+//about me section
+.about-me-section {
+  @include set_size(100%, auto);
+  background-color: gainsboro;
+  @include position_image();
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 20px 0px 0px 0px;
+
+  .right-section {
+    @include set_size(400px, auto);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px 0px 20px 10px;
+    p {
+      font-size: 20px;
+      padding: 10px 10px 10px 0px;
+      color: black;
+      text-align: left;
+      line-height: 27px;
+    }
+    .about-me {
+      h2 {
+        color: whitesmoke;
+        width: 250px;
+        height: 50px;
+        @include align-item(center);
+        border-radius: 50px;
+        margin-bottom: 20px;
+      }
+      li {
+        list-style-type: none;
+        margin: 10px 0px 10px 20px;
+        display: flex;
+        align-items: center;
+
+        flex-direction: row;
+        .icon {
+          @include set_size(30px, 30px);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 15px;
+          i {
+            font-size: 15px;
+            color: white;
+          }
+        }
+      }
+      .contact {
+        @include set_size(auto, auto);
+        h2 {
+          background-color: green;
+          border: 3.5px solid rgb(70, 186, 70);
+        }
+
+        li:nth-child(2) {
+          .icon {
+            background-color: rgb(9, 84, 139);
+          }
+        }
+        li:nth-child(3) {
+          .icon {
+            background-color: rgb(11, 145, 66);
+          }
+        }
+        li:nth-child(4) {
+          .icon {
+            background-color: rgb(189, 29, 44);
+          }
+        }
+        li:nth-child(5) {
+          .icon {
+            background-color: rgb(36, 166, 221);
+          }
+        }
+      }
+      .personal-info {
+        @include set_size(auto, auto);
+        h2 {
+          background-color: rgb(15, 117, 188);
+          border: 3.5px solid rgb(122, 200, 255);
+        }
+        li:nth-child(2) {
+          .icon {
+            background-color: rgb(243, 219, 37);
+          }
+        }
+        li:nth-child(3) {
+          .icon {
+            background-color: rgb(68, 100, 170);
+          }
+        }
+        li:nth-child(4) {
+          .icon {
+            background-color: rgb(222, 16, 124);
+          }
+        }
+        li:nth-child(5) {
+          .icon {
+            background-color: rgb(3, 142, 62);
+          }
+        }
+      }
+
+      .interest {
+        h2 {
+          background-color: rgb(191, 30, 46);
+          border: 3.5px solid rgb(255, 71, 71);
+        }
+        @include set_size(auto, auto);
+        .wrapper {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          grid-gap: 5px;
+          li {
+            margin: 10px 0px 0px 20px;
+          }
+          li:nth-child(1) {
+            .icon {
+              background-color: rgb(68, 100, 170);
+            }
+          }
+          li:nth-child(2) {
+            .icon {
+              background-color: rgb(3, 142, 62);
+            }
+          }
+          li:nth-child(3) {
+            .icon {
+              background-color: rgb(189, 29, 44);
+            }
+          }
+          li:nth-child(4) {
+            .icon {
+              background-color: rgb(243, 219, 37);
+            }
+          }
+          li:nth-child(5) {
+            .icon {
+              background-color: rgb(241, 83, 34);
+            }
+          }
+          li:nth-child(6) {
+            .icon {
+              background-color: rgb(97, 37, 142);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .left-section {
+    @include set_size(60%, auto);
+    @include position_image();
+
+    transition: 0.3s;
+    .img-wrapper {
+      @include set_size(800px, 800px);
+      @include position_image();
+
+      background-image: url("../Asset/Img/Asset\ 1s.png");
+
+      transition: 0.3s;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .about-me-section {
+    overflow-x: hidden;
+    justify-content: center;
+    .left-section {
+      width: 100%;
+      .img-wrapper {
+        @include set_size(400px, 450px);
+      }
+    }
+    .right-section {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .about-me-section {
+    width: 100%;
+  }
+}

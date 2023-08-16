@@ -1,0 +1,1 @@
+.reveal{position:relative;opacity:0;transition:1s all ease-in-out}.reveal.active{transform:translateY(0);opacity:1}.reveal-left{transform:translateX(250px)}.reveal-right{transform:translateX(-250px)}.reveal-up{transform:translateY(250px)}.reveal-down{transform:translateY(-250px)}/*# sourceMappingURL=animations.css.map */
