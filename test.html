@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=	, initial-scale=1.0" />
+    <title>Testing Ground</title>
+
+    <style>
+      .container {
+        height: 100vh;
+        width: 1000px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .box {
+        cursor: move;
+        border: 2px solid red;
+        height: 100px;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      img {
+        background-position: center;
+        background-size: cover;
+      }
+      .scroll-box {
+        height: 200px;
+        width: 200px;
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="ex1" class="container">
+      <div id="ex1-layer" class="box">
+        <img
+          src="Asset/Img/My new logo.png"
+          alt=""
+          height="500px"
+          width="500px"
+        />
+      </div>
+    </div> -->
+
+    <div class="scroll-box" id="myScrollBox">
+      <p>Here is some text that will be inside the scrollable box.Here is some text that will be inside the scrollable box.Here is some text that will be inside the scrollable box.Here is some text that will be inside the scrollable box.</p>
+    </div>
+    <script>
+      var marquee = document.querySelector(".marquee");
+      var speed = 10;
+      var lastScrollPos = 0;
+
+      marquee.addEventListener("wheel", function (event) {
+        event.preventDefault();
+        var delta = event.deltaY || event.detail || event.wheelDelta;
+
+        if (delta > 0) {
+          marquee.scrollLeft += speed;
+        } else {
+          marquee.scrollLeft -= speed;
+        }
+
+        lastScrollPos = marquee.scrollLeft;
+      });
+
+      marquee.addEventListener("scroll", function (event) {
+        if (marquee.scrollLeft > lastScrollPos) {
+          marquee.style.animationPlayState = "paused";
+        } else if (marquee.scrollLeft < lastScrollPos) {
+          marquee.style.animationPlayState = "running";
+        }
+      });
+
+      var scrollBox = document.getElementById("myScrollBox");
+
+      // Automatically scroll to the bottom of the box
+      scrollBox.scrollTop = scrollBox.scrollHeight;
+
+      // Add an event listener to the box so that it scrolls to the bottom whenever new content is added
+      scrollBox.addEventListener("DOMNodeInserted", function () {
+        scrollBox.scrollTop = scrollBox.scrollHeight;
+      });
+
+      // let constrain = 100;
+      // let mouseOverContainer = document.getElementById("ex1");
+      // let ex1Layer = document.getElementById("ex1-layer");
+
+      // let pos1 = 0,
+      //   pos2 = 0,
+      //   pos3 = 0,
+      //   pos4 = 0;
+
+      // ex1Layer.onmousedown = dragMouseDown;
+
+      // function dragMouseDown(e) {
+      //   e = e || window.event;
+      //   e.preventDefault();
+      //   pos3 = e.clientX;
+      //   pos4 = e.clientY;
+      //   document.onmouseup = closeDragElement;
+      //   document.onmousemove = elementDrag;
+      // }
+
+      // function elementDrag(e) {
+      //   e = e || window.event;
+      //   e.preventDefault();
+      //   // calculate the new cursor position:
+      //   pos1 = pos3 - e.clientX;
+      //   pos2 = pos4 - e.clientY;
+      //   pos3 = e.clientX;
+      //   pos4 = e.clientY;
+      //   // set the element's new position:
+      //   if (e.target == ex1Layer) {
+      //     e.target.style.top = e.target.offsetTop - pos2 + "px";
+      //     e.target.style.left = e.target.offsetLeft - pos1 + "px";
+      //   }
+      // }
+      // function closeDragElement() {
+      //   // stop moving when mouse button is released:
+      //   document.onmouseup = null;
+      //   document.onmousemove = null;
+      // }
+
+      // function transforms(x, y, el) {
+      //   let box = el.getBoundingClientRect();
+      //   let calcX = -(y - window.innerHeight / 2) / constrain;
+      //   let calcY = (x - window.innerWidth / 2) / constrain;
+
+      //   return (
+      //     "perspective(100px) " +
+      //     "   rotateX(" +
+      //     calcX +
+      //     "deg) " +
+      //     "   rotateY(" +
+      //     calcY +
+      //     "deg) "
+      //   );
+      // }
+
+      // function transformElement(el, xyEl) {
+      //   el.style.transform = transforms.apply(null, xyEl);
+      // }
+
+      // mouseOverContainer.onmousemove = function (e) {
+      //   let xy = [e.clientX, e.clientY];
+      //   let position = xy.concat([ex1Layer]);
+
+      //   window.requestAnimationFrame(function () {
+      //     transformElement(ex1Layer, position);
+      //   });
+      // };
+    </script>
+  </body>
+</html>
