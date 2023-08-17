@@ -13,19 +13,18 @@ nav {
       @include set_size(50px, 50px);
       border-radius: 50px;
       margin-left: 90px;
-      
     }
   }
 
   ul {
     margin-left: 20px;
-    width: 600px;
+    width: 480px;
     overflow: hidden;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: white;
-    padding: 10px 0px 10px 0px;
+    padding: 7px 0px 7px 0px;
     border-radius: 60px;
     li {
       

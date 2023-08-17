@@ -29,7 +29,13 @@ function progressBar() {
   var bar7 = document.querySelectorAll(".progress-bar-mo");
   var bar8 = document.querySelectorAll(".progress-bar-wd");
   var bar9 = document.querySelectorAll(".progress-bar-ft");
-
+  var bar10 = document.querySelectorAll(".progress-bar-html");
+  var bar11 = document.querySelectorAll(".progress-bar-css");
+  var bar12 = document.querySelectorAll(".progress-bar-js");
+  var bar13 = document.querySelectorAll(".progress-bar-next-js");
+  var bar14 = document.querySelectorAll(".progress-bar-ts");
+  var bar15 = document.querySelectorAll(".progress-bar-tw");
+  
 
   for (var i = 0; i < bar1.length; i++) {
     var windowHeight = window.innerHeight;
@@ -46,6 +52,12 @@ function progressBar() {
       bar7[i].classList.add("active");
       bar8[i].classList.add("active");
       bar9[i].classList.add("active");
+      bar10[i].classList.add("active");
+      bar11[i].classList.add("active");
+      bar12[i].classList.add("active");
+      bar13[i].classList.add("active");
+      bar14[i].classList.add("active");
+      bar15[i].classList.add("active");
     } else {
       bar1[i].classList.remove("active");
       bar2[i].classList.remove("active");
@@ -56,6 +68,12 @@ function progressBar() {
       bar7[i].classList.remove("active");
       bar8[i].classList.remove("active");
       bar9[i].classList.remove("active");
+      bar10[i].classList.remove("active");
+      bar11[i].classList.remove("active");
+      bar12[i].classList.remove("active");
+      bar13[i].classList.remove("active");
+      bar14[i].classList.remove("active");
+      bar15[i].classList.remove("active");
     }
   }
 }

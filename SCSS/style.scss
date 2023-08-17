@@ -20,7 +20,6 @@ body {
   overflow-x: hidden;
 }
 
-//Showcase section
 .showcase {
   width: 100%;
   height: auto;
@@ -37,11 +36,15 @@ body {
   }
 
   .right-section {
-    @include set_size(50%, 670px);
-    background-image: url("../Asset/Img/My\ new\ logo.png");
-    @include position_image();
+    @include set_size(50%, auto);
 
-    margin: -40px 0px 0px 0px;
+    @include align-item(center);
+    @include position_image();
+    margin: -20px 0px 0px 0px;
+    img {
+      height: 700px;
+      width: 700px;
+    }
   }
 
   .left-section {
@@ -56,7 +59,6 @@ body {
       font-weight: bold;
       line-height: 100px;
       color: $secondary-color;
-
       @keyframes changeColor {
         0% {
           //color: var(--color-1);
@@ -122,31 +124,27 @@ body {
     .buttons {
       margin-top: 20px;
       button {
-        width: 120px;
+        width: 140px;
         height: 40px;
         border: 0;
         border-radius: 30px;
+        a {
+          color: black;
+          font-size: 15px;
+          text-decoration: none;
+        }
       }
-      a {
-        text-decoration: none;
-        color: whitesmoke;
-        font-size: 15px;
-      }
-      .btn-email {
+
+      button:hover {
         background: -webkit-linear-gradient(
           180deg,
           rgb(56, 213, 98),
           rgb(91, 164, 181)
         );
-
-        color: $secondary-color;
-      }
-      .btn-useless {
-        border: 3px;
-        border-width: 10px;
-        a {
-          color: black;
+        a{
+          color: white;
         }
+       
       }
     }
   }
@@ -203,6 +201,10 @@ body {
     }
     .right-section {
       width: 100%;
+      img {
+        width: 380px;
+        height: 380px;
+      }
     }
   }
 }
